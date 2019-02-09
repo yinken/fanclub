@@ -18,7 +18,16 @@ class MemberRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Member::class);
     }
-
+    public function findMemberByFanclub($fanclub)
+    {
+        $fanclubMember = $this->createQueryBuilder('m')
+            ->andWhere('m.fanclub = :fanclub')
+            ->setParameter('fanclub',$fanclub)
+            ->orderBy('m.fanclub', 'ASC')
+            ->getQuery();
+        
+        return $fanclubMembers->execute();
+    }
     // /**
     //  * @return Member[] Returns an array of Member objects
     //  */
