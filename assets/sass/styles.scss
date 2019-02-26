@@ -1,11 +1,25 @@
 // Import necessary Bulma modules
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/sass/base/_all.sass";
-@import "../../node_modules/bulma/sass/elements/button.sass";
-@import "../../node_modules/bulma/sass/elements/container.sass";
-@import "../../node_modules/bulma/sass/elements/form.sass";
+@import "../../node_modules/bulma/sass/elements/_all.sass";
 @import "../../node_modules/bulma/sass/components/navbar.sass";
 @import "../../node_modules/bulma/sass/components/modal.sass";
+@import "../../node_modules/bulma/sass/components/card.sass";
 @import "../../node_modules/bulma/sass/layout/hero.sass";
 @import "../../node_modules/bulma/sass/layout/section.sass";
 @import "../../node_modules/bulma/sass/grid/tiles.sass";
+
+// Custom Styles
+  body,html {
+    background: #999;
+  }
+
+
+.card {
+  .card-header {
+    .card-header-title {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

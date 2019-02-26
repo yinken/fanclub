@@ -5,7 +5,6 @@ use App\Entity\Member;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Response;
 
 class Members extends AbstractController
   {
@@ -32,12 +31,9 @@ class Members extends AbstractController
                 'fanclub' => $member->getFanclub(),
                 'favchar' => $member->getFavchar()
             ]);
-        }
-        $response = new Response(
-        json_encode($out),
-            Response::HTTP_OK,
-            array('content-type' => 'application/json')
-            );
-        return $response;
+        }  
+        return $this->render('members.html.twig', [
+            'members' => $members
+        ]);
       }
   }
